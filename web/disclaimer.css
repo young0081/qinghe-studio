@@ -1,0 +1,30 @@
+.disclaimer-dialog { width: min(660px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); margin: auto; padding: 0; overflow: hidden; border: 3px solid #a5be89; background: var(--paper); color: var(--text); box-shadow: 6px 6px #41533355; }
+.disclaimer-dialog[open] { display: flex; flex-direction: column; }
+.disclaimer-dialog::backdrop { background: #2f432d66; }
+.disclaimer-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px 17px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+.disclaimer-heading > div { min-width: 0; }
+.disclaimer-heading span { display: block; margin-bottom: 5px; color: var(--muted); font-size: 10px; }
+.disclaimer-heading h2 { color: var(--green-dark); font-size: 18px; line-height: 1.5; font-weight: 700; }
+.disclaimer-close { width: 34px; height: 34px; flex-shrink: 0; }
+.disclaimer-body { min-height: 0; padding: 18px 26px 26px; overflow: auto; overscroll-behavior: contain; }
+.disclaimer-body:focus-visible { outline: 2px solid #7aa65d; outline-offset: -4px; }
+.disclaimer-intro { color: #68765a; font-size: 12px; line-height: 1.8; }
+.disclaimer-sections { margin: 20px 0 0; padding-left: 24px; }
+.disclaimer-sections li { padding-left: 5px; }
+.disclaimer-sections li + li { margin-top: 19px; }
+.disclaimer-sections li::marker { color: #729453; font-family: var(--mono); font-size: 12px; font-weight: 700; }
+.disclaimer-sections h3 { margin: 0 0 6px; color: var(--green-dark); font-size: 13px; line-height: 1.6; }
+.disclaimer-sections p { color: #59654f; font-size: 12px; line-height: 1.9; }
+.composer-footer:has(.composer-usage-note) { flex-wrap: wrap; row-gap: 5px; }
+.composer-usage-note { display: flex; align-items: baseline; justify-content: flex-end; gap: 7px; min-width: 0; margin-left: auto; color: #7b856e; font-size: 11px; line-height: 1.7; }
+.composer-usage-note > span { min-width: 0; }
+.composer-usage-note button { flex-shrink: 0; padding: 0; color: #587442; text-decoration: underline; text-underline-offset: 2px; }
+.composer-usage-note button:hover { color: var(--green-dark); }
+@media (max-width: 450px) {
+  .disclaimer-heading { padding: 16px; gap: 10px; }
+  .disclaimer-heading h2 { font-size: 16px; }
+  .disclaimer-body { padding: 16px 18px 22px; }
+  .disclaimer-sections { padding-left: 21px; }
+  .disclaimer-sections li { padding-left: 3px; }
+  .composer-usage-note { justify-content: flex-start; margin-left: 0; text-align: left; }
+}

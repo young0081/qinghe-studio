@@ -1,0 +1,12 @@
+.model-orchestration { border-top: 2px solid var(--line, #d6ddc7); margin-top: 24px; padding-top: 24px; min-width: 0; }
+.orchestration-block { padding: 14px 0; border-bottom: 1px solid var(--line, #d6ddc7); min-width: 0; }
+.orchestration-block h3 { font-size: 15px; margin: 0 0 8px; }
+.orchestration-block p { color: var(--muted, #66715c); font-size: 12px; line-height: 1.8; margin: 8px 0 12px; }
+.orchestration-block select { width: 100%; min-width: 0; text-overflow: ellipsis; }
+.routing-candidates { max-height: 360px; overflow: auto; border: 1px solid var(--line, #d6ddc7); background: var(--paper, #fffdf5); }
+.routing-candidate { padding: 12px; border-bottom: 1px solid var(--line, #d6ddc7); min-width: 0; }
+.routing-candidate:last-child { border-bottom: 0; }
+.routing-candidate span { overflow-wrap: anywhere; }
+.routing-candidate small { display: block; color: #8b642d; }
+.model-usage { padding: 8px 0; border-top: 1px solid var(--line, #d6ddc7); font-size: 11px; overflow-wrap: anywhere; }
+.model-usage small { display: block; color: var(--muted, #66715c); margin-top: 4px; }

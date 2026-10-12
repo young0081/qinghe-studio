@@ -1,0 +1,44 @@
+.extension-eyebrow { color: #7c9360; font: 10px var(--mono); letter-spacing: 1.4px; }
+.extension-tabs { display: flex; padding: 0 34px; gap: 28px; border-bottom: 2px solid #d6dfc7; background: #f4f6e9; }
+.extension-tabs button { padding: 17px 2px 13px; color: #82916e; border-bottom: 3px solid transparent; font-size: 12px; }
+.extension-tabs button[aria-selected=true] { color: #506f37; border-bottom-color: #80a254; }
+.extension-tabs span { margin-left: 9px; padding: 2px 5px; background: #e5ebd7; font: 10px var(--mono); }
+.extension-intro { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 22px; }
+.extension-intro h2 { color: #536d40; font-size: 17px; margin-bottom: 8px; }
+.extension-intro p, .extension-help { font-size: 11px; color: #7a896a; line-height: 1.9; }
+.extension-intro > button { flex-shrink: 0; }
+.extension-toolbar, .extension-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; }
+.extension-toolbar { margin-bottom: 22px; }
+.extension-layout { display: grid; gap: 20px; padding-bottom: 30px; }
+.extension-layout.with-editor { grid-template-columns: minmax(220px, .8fr) minmax(300px, 1.2fr); align-items: start; }
+.extension-list { display: grid; gap: 14px; min-width: 0; }
+.extension-card, .extension-editor { padding: 20px; border: 2px solid #d3ddc2; background: #fffef6; box-shadow: 3px 3px #e4e9d8; min-width: 0; }
+.extension-card.selected { border-color: #95b16e; }
+.extension-card-title { display: flex; gap: 12px; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.extension-card h3, .extension-editor h2 { color: #526d3e; font-size: 14px; overflow-wrap: anywhere; }
+.extension-status { flex-shrink: 0; color: #8b957c; background: #f0f1e8; border: 1px solid #d9dfcf; padding: 3px 7px; font-size: 10px; }
+.extension-status.connected { color: #547b35; background: #eaf2dc; border-color: #bacc9e; }
+.extension-status.error, .extension-error { color: #a9654c !important; }
+.extension-card > p { font-size: 11px; color: #81906d; line-height: 1.9; overflow-wrap: anywhere; margin-bottom: 12px; }
+.extensions-page details { font-size: 10px; color: #758966; margin: 14px 0; overflow-wrap: anywhere; }
+.extensions-page summary { cursor: pointer; line-height: 1.8; }
+.extensions-page details ul { padding-left: 18px; line-height: 2; max-height: 220px; overflow: auto; margin-top: 10px; }
+.extension-actions { margin-top: 16px; }
+.extension-actions .danger { margin-left: auto; color: #a57054; }
+.extension-editor fieldset { border: 0; padding: 0; min-width: 0; }
+.extension-editor label { display: block; font-size: 11px; color: #657b51; margin-top: 17px; }
+.extension-editor .extension-code { font-family: var(--mono); font-size: 11px; tab-size: 2; }
+.extension-editor .skill-source { min-height: 300px; line-height: 1.9; }
+.extension-help { margin-top: 10px; }
+.extension-save { display: flex; align-items: center; justify-content: space-between; padding-top: 20px; margin-top: 20px; border-top: 1px solid #e0e6d3; gap: 10px; }
+.extension-save > span { font-size: 10px; color: #8d987b; }
+.extension-empty { padding: 48px 22px; text-align: center; color: #9dae86; background: #f6f8eb; border: 2px dashed #d5dfc4; }
+.extension-empty h3 { font-size: 15px; color: #779358; margin: 15px 0 10px; }
+.extension-empty p { font-size: 11px; line-height: 1.9; }
+.extension-confirm { position: fixed; margin: auto; padding: 26px; max-width: min(440px, calc(100vw - 32px)); background: #fafbf0; border: 2px solid #a7bb8a; color: #526d3e; box-shadow: 5px 5px #526d3e33; }
+.extension-confirm::backdrop { background: #29321d66; }
+.extension-confirm h2 { font-size: 18px; margin-bottom: 12px; }
+.extension-confirm p { font-size: 12px; line-height: 1.8; }
+.extensions-page button:focus-visible, .extensions-page summary:focus-visible { outline: 2px solid #6c9249; outline-offset: 3px; }
+@media (max-width: 1000px) { .extension-layout.with-editor { grid-template-columns: 1fr; } .extension-editor { grid-row: 1; } }
+@media (max-width: 600px) { .extension-tabs { padding: 0 18px; } .extension-intro { align-items: flex-start; flex-direction: column; gap: 12px; } .extension-card, .extension-editor { padding: 15px; } .extension-toolbar .button { font-size: 10px; } }

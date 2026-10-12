@@ -1,36 +1,72 @@
 # 青禾 Studio
 
-由 **Qn** 开发的本地 AI 编程工作台，提供桌面界面，支持多家模型供应商、文件与网页工具、会话分支、上下文压缩、模型协作、Skills 和 MCP。
-
-本仓库提供 Windows 版本下载及使用说明。
+由 **Qn** 开发的本地 AI 编程工作台，提供 Electron 桌面端、Web 界面、CLI 和 TUI。支持多家模型供应商、文件与网页工具、上下文压缩、模型决策与路由、Skills 和 MCP。
 
 ## 下载
 
-打开[最新版本下载](https://github.com/young0081/qinghe-studio/releases/latest)，选择最新版本并展开 **Assets**：
+[下载最新 Windows 版本](https://github.com/young0081/qinghe-studio/releases/latest)。
 
-| 文件 | 用途 |
+- `Qinghe-Studio-Setup-1.15.2-win-x64.exe`：安装版。
+- `Qinghe-Studio-1.15.2-win-x64.zip`：完整解压版，解压全部文件后运行 `Harness Studio.exe`。
+- `Qinghe-Studio-1.15.2-SHA256SUMS.txt`：文件校验值。
+
+安装包适用于 Windows 10/11 x64，已包含运行时。网页自动化需要安装 Edge 或 Chrome。
+
+## 从源码运行
+
+需要 Node.js **22.12.0 或更新版本**和 npm。
+
+```sh
+npm ci
+npm run gui
+```
+
+启动后选择工作区，在「供应商与模型」中配置服务地址、API 密钥和模型。模型服务费用由使用者自行承担。
+
+Web 开发模式需要在两个终端分别运行：
+
+```sh
+npm run web
+```
+
+```sh
+npm run dev
+```
+
+访问 `http://127.0.0.1:5173`，后端默认监听 `127.0.0.1:3210`。
+
+## 项目结构
+
+| 目录 | 内容 |
 | --- | --- |
-| `Qinghe-Studio-Setup-1.15.2-win-x64.exe` | Windows 安装程序，推荐普通用户使用 |
-| `Qinghe-Studio-1.15.2-win-x64.zip` | 完整解压版，解压全部文件后运行 `Harness Studio.exe` |
-| `Qinghe-Studio-1.15.2-SHA256SUMS.txt` | SHA-256 校验值 |
+| `src/core/` | 会话、模型协议、上下文、工具与配置存储 |
+| `src/automation/` | 浏览器及 Windows 桌面自动化 |
+| `src/integrations/` | MCP 集成 |
+| `web/` | React 界面与样式 |
+| `desktop/` | Electron 主进程、预加载桥接、图标及安装器源码 |
+| `scripts/` | 构建、启动及验证脚本 |
+| `test/` | 单元、接口、浏览器及桌面测试 |
 
-适用于 **Windows 10/11 x64**。应用已包含运行时，无需另装 Node.js。网页自动化需要系统安装 Edge 或 Chrome。
+## 构建与测试
 
-## 开始使用
+| 命令 | 作用 |
+| --- | --- |
+| `npm start -- --help` | CLI 使用说明 |
+| `npm run tui` | 终端界面 |
+| `npm run check` | JavaScript 语法检查 |
+| `npm test` | Node.js 自动化测试 |
+| `npm run build` | 构建 Web 界面至 `dist/` |
+| `npm run test:e2e` | Playwright 浏览器测试 |
+| `npm run test:gui` | Electron 界面测试 |
+| `npm run build:gui` | 构建 Windows 解包应用至 `release/` |
+| `npm run build:installer` | 构建 Windows 安装程序 |
 
-1. 安装或完整解压应用，启动青禾 Studio。
-2. 选择存放项目的工作区。
-3. 在「供应商与模型」中配置模型服务地址、API 密钥及模型。
-4. 根据任务设置运行策略，然后开始对话。
-
-模型 API 费用由使用者自行承担。升级前请保存任务并退出应用；安装版会沿用已登记的安装目录。解压版需保留同目录所有依赖文件。
-
-程序尚未配置代码签名，Windows 或安全软件可能提示风险；请核对下载来源与文件哈希，不要关闭安全软件防护。
+运行浏览器及桌面测试前先执行 `npm run build`；浏览器测试需要 `npx playwright install chromium`，桌面测试需要图形环境。Windows 安装程序使用系统 .NET Framework 4.x 编译器，须在 Windows 上构建。
 
 ## 使用声明
 
-请仅在合法、获得授权的范围内使用。AI 生成内容和自动操作可能出错，涉及文件修改、命令执行或外部服务时请审阅结果，并备份重要数据。模型及第三方服务受各自条款约束。使用者应依法承担相应责任；本说明不排除或限制依法不能排除的责任。
+请在合法、获授权的范围内使用。模型输出和自动操作可能出错，执行关键操作前应核验结果并备份重要数据。密钥、工作区配置和会话数据应保存在本机，不要提交到仓库。完整说明见[使用声明与免责声明](docs/usage-disclaimer.md)。
 
 ## 支持项目
 
-欢迎通过 [Qn 的爱发电主页](https://afdian.com/a/qnqinghe)自愿支持项目开发与维护。是否赞助不影响现有功能，赞助不包含模型 API 额度。
+欢迎通过 [Qn 的爱发电主页](https://afdian.com/a/qnqinghe)自愿支持开发与维护。是否赞助不影响现有功能，赞助不包含模型 API 额度。

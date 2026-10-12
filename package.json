@@ -1,0 +1,89 @@
+{
+  "name": "qinghe-studio",
+  "version": "1.15.2",
+  "description": "青禾 Studio — 本地 AI 编程工作台",
+  "author": "Qn",
+  "type": "module",
+  "main": "desktop/main.js",
+  "private": true,
+  "bin": {
+    "harness": "./src/cli.js"
+  },
+  "scripts": {
+    "start": "node src/cli.js",
+    "dev": "vite --host 127.0.0.1",
+    "web": "node src/cli.js web",
+    "tui": "node src/cli.js tui",
+    "gui": "npm run build && node scripts/launch-gui.js",
+    "build:gui": "npm run icon && npm run build && electron-builder --win dir",
+    "build:installer": "node scripts/build-installer.js",
+    "icon": "node scripts/create-icon.js",
+    "build": "vite build",
+    "test": "node --test --test-concurrency=1 test/*.test.js",
+    "test:e2e": "playwright test",
+    "test:gui": "playwright test --config playwright.gui.config.js",
+    "test:installer": "node scripts/smoke-installer.js",
+    "check": "node scripts/check.js"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "blessed": "^0.1.81",
+    "fflate": "^0.8.2",
+    "highlight.js": "^11.12.0",
+    "katex": "^0.16.47",
+    "lowlight": "^3.3.0",
+    "parse5": "^7.3.0",
+    "playwright-core": "^1.58.2",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-markdown": "^10.1.0",
+    "rehype-highlight": "^7.0.2",
+    "rehype-katex": "^7.0.1",
+    "rehype-raw": "^7.0.0",
+    "rehype-sanitize": "^6.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@vitejs/plugin-react": "^5.1.4",
+    "electron": "^44.5.0",
+    "electron-builder": "^26.15.3",
+    "vite": "^7.3.1"
+  },
+  "build": {
+    "appId": "dev.harness.studio",
+    "productName": "青禾 Studio",
+    "executableName": "Harness Studio",
+    "asar": true,
+    "directories": {
+      "output": "release/runtime-${version}"
+    },
+    "files": [
+      "desktop/**",
+      "!desktop/installer/**",
+      "src/**",
+      "dist/**",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "desktop/assets/icon.ico",
+      "signExecutable": false,
+      "artifactName": "Qinghe-Studio-${version}-win-${arch}.${ext}"
+    },
+    "portable": {
+      "artifactName": "Qinghe-Studio-${version}-win-${arch}.${ext}"
+    }
+  }
+}

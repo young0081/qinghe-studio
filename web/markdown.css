@@ -1,0 +1,78 @@
+.markdown { font-size: 13px; line-height: 1.9; color: #56684a; overflow-wrap: anywhere; min-width: 0; }
+.markdown p { margin: 0 0 12px; white-space: pre-line; }
+.markdown > :first-child { margin-top: 0; }
+.markdown > :last-child { margin-bottom: 0; }
+.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 { font-weight: 600; line-height: 1.5; color: #526d3d; margin: 20px 0 10px; }
+.markdown h1 { font-size: 22px; }
+.markdown h2 { font-size: 19px; border-bottom: 1px solid #d8e2c8; padding-bottom: 7px; }
+.markdown h3 { font-size: 16px; }
+.markdown h4 { font-size: 14px; }
+.markdown h5, .markdown h6 { font-size: 13px; }
+.markdown strong { font-weight: 650; color: #4f6c38; }
+.markdown a { color: #476e92; text-decoration: underline; text-underline-offset: 3px; }
+.markdown a:hover { color: #2a5073; background: #eaf3f3; }
+.markdown code:not(pre code), .markdown kbd { background: #ebf1df; border: 1px solid #dce5c9; padding: 1px 5px; font-size: .9em; color: #56763b; white-space: break-spaces; }
+.markdown kbd { box-shadow: 0 2px #c8d5b4; }
+.markdown ul, .markdown ol { padding-left: 24px; margin: 10px 0; }
+.markdown li { padding-left: 3px; margin: 4px 0; }
+.markdown li::marker { color: #7f9a61; }
+.markdown li > p { margin-bottom: 6px; }
+.markdown li > ul, .markdown li > ol { margin: 4px 0; }
+.markdown .contains-task-list { list-style: none; padding-left: 5px; }
+.markdown .task-list-item input { margin: 0 8px 0 0; accent-color: #709c49; opacity: 1; vertical-align: middle; }
+.markdown blockquote { margin: 14px 0; padding: 10px 15px; border-left: 4px solid #9ab87a; background: #f0f4e6; color: #687e55; }
+.markdown blockquote > :last-child { margin-bottom: 0; }
+.markdown hr { border: 0; border-top: 2px solid #d8e2c8; margin: 20px 0; }
+.markdown del, .markdown s { color: #849177; }
+.markdown mark { background: #f4edb8; color: #5f612f; padding: 0 3px; }
+.markdown details { border: 1px solid #cbd9b8; padding: 9px 12px; margin: 12px 0; background: #f6f9ed; }
+.markdown summary { cursor: pointer; font-weight: 600; color: #56763b; }
+.markdown details[open] > summary { margin-bottom: 10px; }
+.markdown dl { margin: 12px 0; }
+.markdown dt { font-weight: 600; }
+.markdown dd { margin-left: 22px; }
+.markdown .footnotes { border-top: 1px solid #d8e2c8; margin-top: 20px; padding-top: 8px; font-size: .9em; }
+.markdown .footnotes h2 { font-size: 13px; border: 0; }
+.markdown-table { max-width: 100%; overflow-x: auto; margin: 15px 0; border: 2px solid #c7d5b2; background: #fffef8; box-shadow: 2px 2px #e6ecd9; }
+.markdown-table table { border-collapse: collapse; width: 100%; font-size: inherit; }
+.markdown-table th, .markdown-table td { padding: 8px 12px; border-right: 1px solid #d8e2c9; border-bottom: 1px solid #d8e2c9; text-align: left; min-width: 100px; }
+.markdown-table th { background: #e8efda; color: #526e39; font-weight: 650; white-space: nowrap; }
+.markdown-table tr:nth-child(even) td { background: #f4f7eb; }
+.markdown-table th:last-child, .markdown-table td:last-child { border-right: 0; }
+.markdown-table tbody tr:last-child td { border-bottom: 0; }
+.markdown-table [align="center"] { text-align: center; }
+.markdown-table [align="right"] { text-align: right; }
+.markdown-table caption { text-align: left; padding: 8px 12px; font-weight: 600; }
+.markdown-table:focus-visible, .code-block pre:focus-visible { outline: 2px solid #7aa65d; outline-offset: 2px; }
+.markdown-image { display: block; max-width: 100%; height: auto; margin: 12px 0; border: 1px solid #d8e2c9; }
+.markdown-image-placeholder { display: inline-block; max-width: 100%; padding: 9px 12px; margin: 8px 0; border: 1px dashed #b9cba5; background: #f3f7eb; }
+.markdown-image-placeholder small { display: block; color: #78886b; font-size: 11px; }
+.markdown-error { display: block; color: #9e6148; font-size: 11px; padding: 5px 10px; }
+.markdown .katex { font-size: 1.1em; line-height: normal; text-indent: 0; white-space: nowrap; }
+.markdown .katex:not(.katex-display > .katex) { display: inline-block; max-width: 100%; overflow-x: auto; overflow-y: hidden; vertical-align: middle; padding: 3px 0; }
+.markdown .katex-display { display: block; max-width: 100%; overflow-x: auto; overflow-y: hidden; margin: 15px 0; padding: 14px 12px; border: 2px solid #c7d5b2; background: #f5f8ed; box-shadow: 2px 2px #e6ecd9; }
+.markdown .katex-display > .katex { display: inline-block; min-width: 100%; max-width: none; padding: 2px; }
+.markdown .katex-display:focus-visible { outline: 2px solid #7aa65d; outline-offset: 2px; }
+.markdown .katex-error { white-space: pre-wrap; overflow-wrap: anywhere; font-family: var(--mono); font-size: .95em; }
+.code-block { border: 2px solid #c9d7b4; overflow: hidden; margin: 15px 0; background: #f8fdec; box-shadow: 2px 2px #e5ecd8; }
+.code-title { display: flex; align-items: center; justify-content: space-between; min-height: 33px; gap: 12px; padding: 4px 11px; background: #e8efda; border-bottom: 1px solid #d5e0c1; font-family: var(--mono); font-size: 10px; color: #607c43; }
+.code-title button { flex-shrink: 0; padding: 3px 6px; border: 1px solid #b9cda0; background: #f4f8eb; color: #56773b; font-size: 10px; }
+.code-title button:hover { background: #daeac5; }
+.code-title button[data-copied="true"] { background: #dbeacb; }
+.code-block pre { padding: 13px; overflow: auto; max-height: 560px; line-height: 1.8; tab-size: 2; font-size: 12px; color: #3f5534; white-space: pre; }
+.code-block code { font-size: inherit; white-space: pre; overflow-wrap: normal; }
+.code-block .hljs-comment, .code-block .hljs-quote { color: #7a866b; font-style: italic; }
+.code-block .hljs-keyword, .code-block .hljs-selector-tag, .code-block .hljs-literal { color: #805a9e; }
+.code-block .hljs-string, .code-block .hljs-regexp, .code-block .hljs-addition { color: #4e7c3c; }
+.code-block .hljs-number, .code-block .hljs-symbol, .code-block .hljs-attr { color: #a16b30; }
+.code-block .hljs-title, .code-block .hljs-built_in, .code-block .hljs-tag, .code-block .hljs-selector-class { color: #3f7698; }
+.code-block .hljs-variable, .code-block .hljs-params { color: #855b47; }
+.code-block .hljs-deletion { color: #a05649; }
+@media (max-width: 680px) {
+  .markdown { font-size: 12px; }
+  .markdown h1 { font-size: 19px; }
+  .markdown h2 { font-size: 17px; }
+  .markdown h3 { font-size: 15px; }
+  .markdown-table th, .markdown-table td { padding: 7px 9px; }
+  .code-block pre { font-size: 11px; }
+}

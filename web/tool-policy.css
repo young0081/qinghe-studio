@@ -1,0 +1,15 @@
+.tool-policy { margin: 22px 0; padding: 18px; border: 1px solid #c3cfb4; background: #f5f7ed; }
+.tool-policy h3 { color: #506a3d; font-size: 14px; margin-bottom: 8px; }
+.tool-policy p { color: #728164; font-size: 12px; line-height: 1.8; }
+.tool-policy-mode { margin-top: 10px; padding: 9px 12px; background: #e9eedf; }
+.tool-policy-list { display: grid; gap: 10px; margin: 14px 0; }
+.policy-form .tool-policy-row { display: flex; align-items: flex-start; gap: 11px; margin: 0; padding: 12px; border: 1px solid #d2dcc4; background: #fffef7; cursor: pointer; }
+.policy-form .tool-policy-row > input { flex: 0 0 auto; width: 17px; height: 17px; margin: 2px 0 0; accent-color: #789d54; }
+.tool-policy-row > span { min-width: 0; }
+.tool-policy-row strong { display: flex; flex-wrap: wrap; align-items: baseline; gap: 9px; font-size: 12px; color: #526d40; }
+.tool-policy-row code { font-size: 10px; font-weight: 400; color: #7d8c6e; overflow-wrap: anywhere; }
+.tool-policy-row span > span { display: block; margin-top: 5px; color: #7a866e; font-size: 11px; font-weight: 400; line-height: 1.8; overflow-wrap: anywhere; }
+.tool-policy-row small { display: block; margin-top: 5px; color: #927b47; font-size: 10px; }
+.tool-policy-row:has(input:checked) { background: #edf3e1; border-color: #9fb986; }
+.tool-policy-row:focus-within { outline: 2px solid #7aa65d; outline-offset: 2px; }
+@media (max-width: 500px) { .tool-policy { padding: 12px; } }
